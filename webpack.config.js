@@ -61,9 +61,7 @@ module.exports = [{
         ],
     },
     output: {
-        path: build ?
-            path.resolve(__dirname, 'build/js') :
-            './',
+        path: path.resolve(__dirname, 'build/js'),
         filename: 'app.js',
     },
     resolve: {
@@ -99,13 +97,8 @@ module.exports = [{
                 'NODE_ENV': JSON.stringify('production'),
             }
         }),
-        new ExtractTextPlugin(
-            build ?
-                '../css/app.css' :
-                'app.css',
-            {
-                allowChunks: true
-            }
-        )
+        new ExtractTextPlugin('../css/app.css', {
+            allowChunks: true
+        })
     ] : []
 }];

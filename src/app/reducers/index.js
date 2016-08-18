@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux-immutable';
-import AppReducer from './reducers';
+import SharedReducer from './shared';
 
 const rootReducer = combineReducers({
-    hmsdin: AppReducer,
+    sharedStore: SharedReducer,
 });
 
 export default rootReducer;
