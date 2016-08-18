@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+Desktop.ini
+.sass-cache
+thumbs.db
+/build
+/node_modules
+/bower_components
+/_notes
+npm-debug.log
+temp.*

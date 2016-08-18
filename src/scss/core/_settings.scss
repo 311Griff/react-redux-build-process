@@ -1,0 +1,25 @@
+$global-font-size: 16;
+
+$breakpoints: (
+        small: 0,
+        medium: 640px,
+        large: 1025px,
+        xlarge: 1480px,
+        xxlarge: 1920px,
+);
+
+$header-sizes: (
+        small: (
+                'h1': 27,
+        ),
+        medium: (
+                'h1': 34,
+        ),
+        large: (
+                'h1': 40,
+        )
+);
+
+$site-bg: rgba(178, 148, 75, 0.41);
+$site-white: #ffffff;
+$site-black: #000000;

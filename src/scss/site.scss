@@ -1,0 +1,65 @@
+@import 'core/settings';
+@import 'core/functions';
+@import 'core/mixins';
+@import 'core/placeholders';
+@import 'core/animations';
+@import '../../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-flex-grid;
+@include foundation-visibility-classes;
+@include foundation-progress-bar;
+@include foundation-button;
+
+// ***** FOUNDATION OVERRIDES ***** //
+.button,
+.progress {
+  outline: none;
+}
+
+// ***** ROOT ELEMENTS ***** //
+body,
+h1,
+h3,
+p {
+  font-family: 'museo-sans', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $site-bg;
+}
+
+h1 {
+  max-width: 300px;
+  color: $site-white;
+}
+
+// ***** ROOT CLASSES ***** //
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.row {
+  max-width: rem(1200px);
+
+  &.wide {
+    max-width: rem(1480px);
+  }
+}
+
+.hidden {
+  @extend %hidden;
+}
+
+// ***** CUSTOM CLASSES ***** //
+.main-section {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}

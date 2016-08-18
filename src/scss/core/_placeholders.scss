@@ -1,0 +1,31 @@
+%transition { // Global transition
+  transition: all .3s ease-in-out;
+}
+
+%clear {
+  float: none;
+  zoom: 1;
+
+  &::before,
+  &::after {
+    display: block;
+    height: 0;
+    content: '\0020';
+    overflow: hidden;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+%hidden {
+  position: absolute;
+  width: rem(1);
+  height: rem(1);
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
+}
