@@ -29,7 +29,7 @@ if (module.hot) {
 
 if (process.env.NODE_ENV !== 'production') {
     /*eslint-disable */
-    const showDevTools = require('./showDevTools');
+    const showDevTools = require('./devTools/showDevTools');
     /*eslint-enable */
 
     showDevTools(store);
