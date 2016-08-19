@@ -1,11 +1,16 @@
+// Require core libraries
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
+// Require component actions
 import { addToNum, subtractFromNum } from './actions';
+
+// Require selectors for props
 import { selectAdded, selectMultiplied, selectNum, selectTotal } from './selectors';
 
+// pure function - renders view from props. No direct access to app state is needed.
 function App({
     addToNum, // eslint-disable-line no-shadow
     addedNumber,
@@ -46,6 +51,7 @@ function App({
     );
 }
 
+// props validation - fail improper data coming into the component
 App.propTypes = {
     addToNum: React.PropTypes.func,
     addedNumber: React.PropTypes.number,
@@ -55,6 +61,7 @@ App.propTypes = {
     totalNumber: React.PropTypes.number,
 };
 
+// uses selectors (reselect) to grab data required for the component from the redux's immutable store
 const mapStateToProps = createStructuredSelector({
     addedNumber: selectAdded(),
     multipliedNumber: selectMultiplied(),
@@ -62,6 +69,7 @@ const mapStateToProps = createStructuredSelector({
     totalNumber: selectTotal(),
 });
 
+// inject actions (functions to update state) into the component
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         addToNum,
@@ -69,4 +77,5 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
+// connects the component to the redux
 export default connect(mapStateToProps, mapDispatchToProps)(App);
